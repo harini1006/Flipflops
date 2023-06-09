@@ -43,16 +43,77 @@ In T flip flop, "T" defines the term "Toggle". In SR Flip Flop, we provide only 
 
 
 ## Program:
-
-
+### SR-Flipflop:
+```python
+  module exp5a(s,r,clk,q,qbar);
+  input s,r,clk;
+  output reg q;
+  output qbar;
+  always@(posedge clk)
+  begin
+  q=s|((~r)&q);
+  end
+  assign qbar=~q;
+  endmodule
+ ```
+### D_Flipflop:
+```python
+   module exp5b(d,clk,q,qbar);
+   input d,clk;
+   output reg q;
+   output qbar;
+   always@(posedge clk)
+   begin
+   q=((~q)&d)|(q&d);
+   end
+   assign qbar=~q;
+   endmodule
+   ```
+   ### JK Flipflop:
+   ``` python
+   module exp5c(j,k,clk,q,qbar);
+   input j,k,clk;
+   output reg q;
+   output qbar;
+   always@(posedge clk)
+   begin
+   q=((~q)&j)|(q&(~k));
+   end
+   assign qbar=~q;
+   endmodule
+   ```
+   ### T Flipflop:
+   ```python
+      module exp5d(t,clk,q,qbar);
+   input t,clk;
+   output reg q;
+   output qbar;
+   always@(posedge clk)
+   begin
+   q=((~q)&t)|(q&(~t));
+   end
+   assign qbar=~q;
+   endmodule
+   ```
 ## RTL Schematic:
-
-
-
+### SR Flipflop:
+![image](https://github.com/harini1006/Flipflops/assets/113497405/080114f5-c7bc-42de-9cd1-e1815dd3a93a)
+### D Flipflop:
+![image](https://github.com/harini1006/Flipflops/assets/113497405/5250053f-efc7-4749-bd6e-803cc2a368e6)
+### JK Flipflop:
+![image](https://github.com/harini1006/Flipflops/assets/113497405/13bedf63-a0a8-441f-a64a-584d3caaae9f)
+### T Flipflop:
+![image](https://github.com/harini1006/Flipflops/assets/113497405/25468ff8-cadb-440e-aa72-cb7be5d1dc49)
 
 ## Timing Diagram:
-
-
+### SR Flipflop:
+![image](https://github.com/harini1006/Flipflops/assets/113497405/47b89a56-f05a-4135-8239-0f7f828c2f5d)
+### D Flipflop:
+![image](https://github.com/harini1006/Flipflops/assets/113497405/8d1ca69d-0951-40e6-9177-564bd6e542c2)
+### JK Flipflop:
+![image](https://github.com/harini1006/Flipflops/assets/113497405/2633d9ac-0fcf-4023-bf77-d13a8c8593a5)
+### T Flipflop:
+![image](https://github.com/harini1006/Flipflops/assets/113497405/0076f29a-7193-4144-837c-e750f94ef1a1)
 
 ## Result:
 Thus the SR, D, JK and T flipflops are implemented and the characteristic tables are verified.
